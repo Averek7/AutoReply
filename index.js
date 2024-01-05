@@ -1,6 +1,5 @@
 // You have to write a Node.js based app that is able to respond to emails sent to your Gmail mailbox while you’re out on a vacation.
 
-const fs = require("fs");
 const express = require("express");
 const { google } = require("googleapis");
 const { authenticate } = require("@google-cloud/local-auth");
@@ -132,7 +131,7 @@ const main = async () => {
     } else {
       console.log("No new messages");
     }
-  }, Math.floor(Math.random() * (120 - 45 + 1) + 45) * 1000);
+  }, 5000);
 };
 
 app.get("/", async (req, res) => {
